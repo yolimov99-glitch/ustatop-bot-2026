@@ -117,9 +117,7 @@ async def master_location(message: Message, state: FSMContext):
     await state.update_data(location=message.text)
     await state.set_state(MasterForm.experience)
 
-    await message.answer(
-        "💼 Necha yil tajribangiz bor?"
-    )
+    await message.answer("💼 Necha yil tajribangiz bor?")
 
 
 @dp.message(MasterForm.experience)
@@ -171,9 +169,7 @@ async def master_done(message: Message, state: FSMContext):
     photos = data.get("photos", [])
 
     if not photos:
-        await message.answer(
-            "⚠️ Kamida 1 ta ish rasmini yuboring."
-        )
+        await message.answer("⚠️ Kamida 1 ta ish rasmini yuboring.")
         return
 
     await message.answer(
